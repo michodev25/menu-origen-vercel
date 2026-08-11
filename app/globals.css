@@ -251,11 +251,13 @@ a {
 }
 
 .dish-subcategory::after {
+  min-width: 32px;
   height: 1px;
-  flex: 1;
+  flex: 1 1 auto;
+  flex-shrink: 0;
   background: var(--black);
   content: "";
-  opacity: 0.35;
+  opacity: 0.45;
 }
 
 .dish {

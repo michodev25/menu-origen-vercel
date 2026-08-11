@@ -80,6 +80,13 @@ const menuSections: MenuSection[] = [
         subcategory: "Pescados & Mariscos",
       },
       {
+        name: "Ceviche Estilo Chef",
+        description:
+          "Pescado blanco fresco curado en lima con mango, ajo, jengibre y cebolla morada, servido con boniato frito crujiente y delicada leche de tigre de ají dulce.",
+        price: "$9.50",
+        subcategory: "Pescados & Mariscos",
+      },
+      {
         name: "Ensaladilla Rusa Roja Origen",
         description:
           "Ensaladilla rusa cremosa con pimientos del piquillo, atún y mayonesa; suave y equilibrada.",
@@ -99,6 +106,13 @@ const menuSections: MenuSection[] = [
           "Chorizo español cocinado lentamente en una salsa profunda y aromática de vino tinto.",
         price: "$6.50",
         subcategory: "Cerdo & Ibéricos",
+      },
+      {
+        name: "Empanadas Argentinas de Carne",
+        description:
+          "Masa dorada rellena de carne argentina premium cocinada lentamente.",
+        price: "$3.95",
+        subcategory: "Carnes",
       },
       {
         name: "Tapa Andaluza",
@@ -204,7 +218,7 @@ function getDishes(sectionId: string): Dish[] {
 
 const cocktailDishes: Dish[] = [
   {
-    name: "Borgoña",
+    name: "El Bodegón",
     ingredients: "Vino tinto 120 ml · fresas frescas 60 g · triple sec 10 ml · azúcar 10 g",
     description: "Ponche chileno fresco y frutal. El vino tinto y las fresas se integran en un trago amable, jugoso y refrescante.",
     price: "$3.50",
