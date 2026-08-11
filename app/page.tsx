@@ -9,6 +9,13 @@ type Dish = {
   price: string;
 };
 
+type Ripple = {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+};
+
 type MenuSection = {
   id: string;
   label: string;
@@ -173,31 +180,78 @@ const navSections = ["entradas", "hamburguesas", "sandwiches", "bebidas", "postr
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hamburguesas");
+  const [navOverflow, setNavOverflow] = useState({ left: false, right: false });
+  const [ripples, setRipples] = useState<Record<string, Ripple[]>>({});
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const sections = menuSections
       .map(({ id }) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
+    let animationFrame = 0;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const updateActiveSection = () => {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(() => {
+        const navHeight = navRef.current?.offsetHeight ?? 70;
+        const activationLine =
+          navHeight + Math.min(window.innerHeight * 0.3, 190);
+        const isAtPageEnd =
+          window.scrollY + window.innerHeight >=
+          document.documentElement.scrollHeight - 2;
+        let nextSection = sections[0]?.id;
 
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id);
+        if (isAtPageEnd) {
+          nextSection = sections[sections.length - 1]?.id;
+        } else {
+          for (const section of sections) {
+            if (section.getBoundingClientRect().top <= activationLine) {
+              nextSection = section.id;
+            } else {
+              break;
+            }
+          }
         }
-      },
-      {
-        rootMargin: "-18% 0px -67% 0px",
-        threshold: [0, 0.05, 0.15],
-      },
-    );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+        if (nextSection) {
+          setActiveSection((current) =>
+            current === nextSection ? current : nextSection,
+          );
+        }
+      });
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, []);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+
+    const updateOverflow = () => {
+      const maxScrollLeft = nav.scrollWidth - nav.clientWidth;
+      setNavOverflow({
+        left: nav.scrollLeft > 4,
+        right: nav.scrollLeft < maxScrollLeft - 4,
+      });
+    };
+
+    updateOverflow();
+    nav.addEventListener("scroll", updateOverflow, { passive: true });
+    window.addEventListener("resize", updateOverflow);
+
+    return () => {
+      nav.removeEventListener("scroll", updateOverflow);
+      window.removeEventListener("resize", updateOverflow);
+    };
   }, []);
 
   useEffect(() => {
@@ -217,6 +271,44 @@ export default function Home() {
     setActiveSection(id);
   }
 
+  function scrollCategories(direction: -1 | 1) {
+    const nav = navRef.current;
+    if (!nav) return;
+
+    nav.scrollBy({
+      left: direction * nav.clientWidth * 0.72,
+      behavior: "smooth",
+    });
+  }
+
+  function createDishRipple(
+    event: React.PointerEvent<HTMLElement>,
+    dishName: string,
+  ) {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const size = Math.max(bounds.width, bounds.height) * 1.35;
+    const ripple = {
+      id: Date.now(),
+      x: event.clientX - bounds.left - size / 2,
+      y: event.clientY - bounds.top - size / 2,
+      size,
+    };
+
+    setRipples((current) => ({
+      ...current,
+      [dishName]: [...(current[dishName] ?? []), ripple],
+    }));
+
+    window.setTimeout(() => {
+      setRipples((current) => ({
+        ...current,
+        [dishName]: (current[dishName] ?? []).filter(
+          (item) => item.id !== ripple.id,
+        ),
+      }));
+    }, 560);
+  }
+
   return (
     <main id="top">
       <header className="brand-header" aria-label="Origen La Habana">
@@ -232,23 +324,43 @@ export default function Home() {
 
       <h1 className="menu-title">Menú</h1>
 
-      <nav
-        ref={navRef}
-        className="category-nav"
-        aria-label="Categorías del menú"
+      <div
+        className={`category-nav-wrap${navOverflow.left ? " has-left-overflow" : ""}${navOverflow.right ? " has-right-overflow" : ""}`}
       >
-        {navSections.map((section) => (
-          <a
-            key={section.id}
-            className={activeSection === section.id ? "active" : undefined}
-            href={`#${section.id}`}
-            aria-current={activeSection === section.id ? "location" : undefined}
-            onClick={() => selectCategory(section.id)}
-          >
-            {section.label}
-          </a>
-        ))}
-      </nav>
+        <button
+          type="button"
+          className="category-edge category-edge-left"
+          aria-label="Ver categorías anteriores"
+          onClick={() => scrollCategories(-1)}
+        >
+          {"\u2039"}
+        </button>
+        <nav
+          ref={navRef}
+          className="category-nav"
+          aria-label="Categorías del menú"
+        >
+          {navSections.map((section) => (
+            <a
+              key={section.id}
+              className={activeSection === section.id ? "active" : undefined}
+              href={`#${section.id}`}
+              aria-current={activeSection === section.id ? "location" : undefined}
+              onClick={() => selectCategory(section.id)}
+            >
+              {section.label}
+            </a>
+          ))}
+        </nav>
+        <button
+          type="button"
+          className="category-edge category-edge-right"
+          aria-label="Ver más categorías"
+          onClick={() => scrollCategories(1)}
+        >
+          {"\u203a"}
+        </button>
+      </div>
 
       <div className="menu-content">
         {menuSections.map((section) => (
@@ -261,7 +373,24 @@ export default function Home() {
             <h2 id={`${section.id}-title`}>{section.label}</h2>
             <div className="dish-list">
               {section.dishes.map((dish) => (
-                <article className="dish" key={dish.name}>
+                <article
+                  className="dish"
+                  key={dish.name}
+                  onPointerDown={(event) => createDishRipple(event, dish.name)}
+                >
+                  {(ripples[dish.name] ?? []).map((ripple) => (
+                    <span
+                      aria-hidden="true"
+                      className="dish-ripple"
+                      key={ripple.id}
+                      style={{
+                        height: ripple.size,
+                        left: ripple.x,
+                        top: ripple.y,
+                        width: ripple.size,
+                      }}
+                    />
+                  ))}
                   <div className="dish-copy">
                     <h3>{dish.name}</h3>
                     <p>{dish.description}</p>
