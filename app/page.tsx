@@ -185,28 +185,22 @@ const menuSections: MenuSection[] = [
     label: "Postres",
     dishes: [
       {
-        name: "Cheesecake de limón",
+        name: "Cheesecake de Dulce de Leche Estilo Argentino",
         description:
-          "Base crujiente de galletas de coco, queso crema, leche condensada, limón verde y menta.",
-        price: "$5.99",
+          "Cheesecake argentino refinado, de textura aterciopelada, terminado con dulce de leche premium.",
+        price: "$5.00",
       },
       {
-        name: "Churros",
+        name: "Tiramisú Deconstruido",
         description:
-          "Churros tradicionales con salsa aparte o churros rellenos con dulce de leche.",
-        price: "$4.00",
+          "Tiramisú elegante deconstruido con crema suave de mascarpone, bizcocho impregnado de espresso, cacao fino y notas de chocolate, reinterpretando el clásico italiano de forma moderna y refinada.",
+        price: "$5.00",
       },
       {
-        name: "Crepas rellenas",
+        name: "Postre del Día",
         description:
-          "Crepa rellena de fresas y plátano, bañadas con sirope de chocolate o dulce de leche.",
-        price: "$6.00",
-      },
-      {
-        name: "Pastel de tres leches",
-        description:
-          "Clásico bizcocho bañado en leche evaporada, crema de leche y leche condensada.",
-        price: "$5.99",
+          "Consulte con nuestro equipo la selección fresca preparada para hoy.",
+        price: "$5.00",
       },
     ],
   },
@@ -383,6 +377,117 @@ const principalDishes: Dish[] = [
     subcategory: "Pescados & Mariscos",
   },
 ];
+
+const coffeeDishes: Dish[] = [
+  {
+    name: "Espresso",
+    description: "Corto, intenso y aromático.",
+    price: "$1.50",
+    subcategory: "Cafés Clásicos",
+  },
+  {
+    name: "Cortado",
+    description: "Espresso con un toque de leche.",
+    price: "$2.00",
+    subcategory: "Cafés Clásicos",
+  },
+  {
+    name: "Café Americano",
+    description: "Largo, suave y equilibrado.",
+    price: "$2.00",
+    subcategory: "Cafés Clásicos",
+  },
+  {
+    name: "Café con Leche",
+    description: "Café y leche caliente en proporción clásica.",
+    price: "$3.20",
+    subcategory: "Cafés Clásicos",
+  },
+  {
+    name: "Café Bombón",
+    description: "Espresso con leche condensada, dulce y cremoso.",
+    price: "$4.50",
+    subcategory: "Cafés Clásicos",
+  },
+  {
+    name: "Mocha",
+    description: "Café, leche y cacao con textura sedosa.",
+    price: "$4.50",
+    subcategory: "Cafés Clásicos",
+  },
+  {
+    name: "Carajillo",
+    description: "Espresso con licor intenso, cálido y digestivo.",
+    price: "$5.00",
+    subcategory: "Cafés con Licor",
+  },
+  {
+    name: "Café Irlandés",
+    description: "Café, whisky, azúcar y crema suave.",
+    price: "$7.00",
+    subcategory: "Cafés con Licor",
+  },
+  {
+    name: "Café Calypso",
+    description: "Café con ron y caramelo.",
+    price: "$7.00",
+    subcategory: "Cafés con Licor",
+  },
+  {
+    name: "Café Royal",
+    description: "Café con brandy o coñac; elegante y profundo.",
+    price: "$7.00",
+    subcategory: "Cafés con Licor",
+  },
+  {
+    name: "Café Baileys",
+    description: "Café con crema irlandesa; suave y goloso.",
+    price: "$7.00",
+    subcategory: "Cafés con Licor",
+  },
+  {
+    name: "Baileys",
+    description: "Crema irlandesa. Dulce, cremoso, ideal para café, postres y sobremesa.",
+    price: "$5.00",
+    subcategory: "Licores & Digestivos",
+  },
+  {
+    name: "Kahlúa",
+    description: "Licor de café. Aromático, dulce y perfecto para cócteles con espresso.",
+    price: "$5.00",
+    subcategory: "Licores & Digestivos",
+  },
+  {
+    name: "Cinzano",
+    description: "Vermut clásico. Herbal, cítrico y elegante para acompañar la sobremesa.",
+    price: "$3.00",
+    subcategory: "Licores & Digestivos",
+  },
+  {
+    name: "Campari",
+    description: "Amaro italiano. Amargo, cítrico y profundo; base de Negroni y Spritz.",
+    price: "$4.00",
+    subcategory: "Licores & Digestivos",
+  },
+  {
+    name: "Anís del Mono",
+    description: "Digestivo anisado, aromático y suave para la sobremesa.",
+    price: "$3.00",
+    subcategory: "Licores & Digestivos",
+  },
+  {
+    name: "Aperol Spritz Original",
+    description: "Clásico italiano refrescante con Aperol, Prosecco y soda de limón.",
+    price: "$11.00",
+    subcategory: "Licores & Digestivos",
+  },
+  {
+    name: "Vermut con hielo y piel cítrica",
+    description: "Negroni, Americano, Spritz y digestivos de sobremesa.",
+    price: "",
+    subcategory: "Digestivos & Vermuts",
+  },
+];
 const navSections: MenuSection[] = [
   {
     id: "cocteleria",
@@ -405,9 +510,9 @@ const navSections: MenuSection[] = [
     dishes: getDishes("postres"),
   },
   {
-    id: "cafe-aperitivos",
-    label: "Café y Aperitivos",
-    dishes: [],
+    id: "cafe-digestivos",
+    label: "Café & Digestivos",
+    dishes: coffeeDishes,
   },
 ];
 
