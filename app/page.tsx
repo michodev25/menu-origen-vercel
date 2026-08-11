@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 type Dish = {
   name: string;
   description: string;
   price: string;
+  ingredients?: string;
+  note?: boolean;
+  subcategory?: string;
 };
 
 type Ripple = {
@@ -24,92 +27,113 @@ type MenuSection = {
 
 const menuSections: MenuSection[] = [
   {
-    id: "hamburguesas",
-    label: "Hamburguesas",
-    dishes: [
-      {
-        name: "Hamburguesa americana",
-        description:
-          "6 oz de carne, queso cheddar, tomate, lechuga, cebolla y pepinillos agridulces.",
-        price: "$12.00",
-      },
-      {
-        name: "Hamburguesa de hongos",
-        description:
-          "6 oz de carne, queso Suizo, hongos, cebolla caramelizada, mayonesa, sal y pimienta.",
-        price: "$11.99",
-      },
-      {
-        name: "Hamburguesa hawaiana",
-        description:
-          "6 oz de carne, queso Mozzarella, piña en rodajas, salsa barbacoa, lechuga y tocino.",
-        price: "$11.99",
-      },
-      {
-        name: "Hamburguesa vegetariana",
-        description:
-          "6 oz de carne vegetal de lentejas, queso cheddar, tomate, lechuga, cebolla y pepinillos.",
-        price: "$10.99",
-      },
-    ],
-  },
-  {
     id: "entradas",
     label: "Entradas",
     dishes: [
       {
-        name: "Bolitas de yuca",
+        name: "Pimientos del Piquillo Rellenos",
         description:
-          "Esferas de yuca rellenas de queso Mozzarella y queso parmesano rayado.",
-        price: "$8.99",
+          "Pimientos del piquillo asados, rellenos con una preparación rica y delicada.",
+        price: "$8.40",
+        subcategory: "Vegetariano & Fresco",
       },
       {
-        name: "Nachos",
+        name: "Pan Tostado con Tomate",
         description:
-          "Totopos de maíz con frijoles negros, aguacate, pico de gallo y queso.",
-        price: "$8.99",
+          "Pan crujiente con tomate fresco triturado, aceite de oliva virgen extra y un toque de sal marina.",
+        price: "$2.50",
+        subcategory: "Vegetariano & Fresco",
       },
       {
-        name: "Ceviche de pescado",
+        name: "Ensalada Mixta",
         description:
-          "Filetes de corvina, bañados en limón, acompañados con maíz y camote.",
-        price: "$10.99",
+          "Lechuga fresca, tomates maduros y cebolla delicada; ligera, crujiente y naturalmente refrescante.",
+        price: "$3.20",
+        subcategory: "Vegetariano & Fresco",
       },
       {
-        name: "Aros de cebolla",
+        name: "Tabla de Queso Manchego Curado",
         description:
-          "Crujientes aros de cebolla acompañados con salsa de mostaza.",
-        price: "$7.00",
-      },
-    ],
-  },
-  {
-    id: "sandwiches",
-    label: "Sándwiches",
-    dishes: [
-      {
-        name: "Sándwich club",
-        description:
-          "Emparedado tradicional con filete, queso americano, bacon, lechuga, tomate y huevo.",
-        price: "$10.99",
+          "Queso manchego maduro, de sabor profundo, notas de frutos secos y textura firme.",
+        price: "$7.50",
+        subcategory: "Quesos & Ensaladas",
       },
       {
-        name: "Sándwich de pollo",
+        name: "Ensalada Argentina de Steak",
         description:
-          "Emparedado tradicional con pollo crujiente, lechuga, pepinillos y mayonesa picante.",
-        price: "$10.99",
+          "Ensalada de carne argentina con queso azul y vinagreta Origen; intensa, fresca y refinada.",
+        price: "$12.50",
+        subcategory: "Quesos & Ensaladas",
       },
       {
-        name: "Sándwich italiano",
+        name: "Ensalada César Clásica",
         description:
-          "Emparedado de pan integral con rodajas de tomate, queso mozzarella, pollo y pesto.",
-        price: "$8.99",
+          "Hojas frescas con salsa César sedosa, queso pecorino, bacon crujiente y croutons.",
+        price: "$7.50",
+        subcategory: "Quesos & Ensaladas",
       },
       {
-        name: "Sándwich Monte Cristo",
+        name: "Gambas al Ajillo",
         description:
-          "Rebanadas de pan, jamón de pavo, queso Suizo, salsa de mostaza y mermelada de frambuesas.",
-        price: "$8.99",
+          "Gambas jugosas cocinadas suavemente con ajo, aceite de oliva y chili.",
+        price: "$8.90",
+        subcategory: "Pescados & Mariscos",
+      },
+      {
+        name: "Ensaladilla Rusa Roja Origen",
+        description:
+          "Ensaladilla rusa cremosa con pimientos del piquillo, atún y mayonesa; suave y equilibrada.",
+        price: "$6.50",
+        subcategory: "Pescados & Mariscos",
+      },
+      {
+        name: "Huevos Rotos con Jamón Ibérico",
+        description:
+          "Patatas y huevo con jamón; suave, sabroso e indulgente.",
+        price: "$8.50",
+        subcategory: "Cerdo & Ibéricos",
+      },
+      {
+        name: "Chorizo Español al Vino Tinto",
+        description:
+          "Chorizo español cocinado lentamente en una salsa profunda y aromática de vino tinto.",
+        price: "$6.50",
+        subcategory: "Cerdo & Ibéricos",
+      },
+      {
+        name: "Tapa Andaluza",
+        description:
+          "Tierno filete de res sellado con setas y un intenso toque de pimentón ahumado.",
+        price: "$8.50",
+        subcategory: "Carnes",
+      },
+      {
+        name: "BAO Estilo Origen",
+        description:
+          "Pan bao casero relleno de carne argentina premium y mayonesa picante.",
+        price: "$3.95",
+        subcategory: "Carnes",
+      },
+      {
+        name: "Albóndigas en Salsa de Tomate Casera",
+        description:
+          "Albóndigas artesanales en una salsa de tomate profunda y casera.",
+        price: "$8.00",
+        subcategory: "Carnes",
+      },
+      {
+        name: "Carpaccio Premium de Res Argentina",
+        description:
+          "Finas láminas de res argentina premium con rúcula, alcaparras, jugo de limón y aceite de oliva virgen extra.",
+        price: "$15.00",
+        subcategory: "Carnes",
+      },
+      {
+        name: "Tabla Ibérica de Bellota",
+        description:
+          "Embutidos ibéricos premium de bellota, finamente cortados, ricos y de textura fundente.",
+        price: "$16.50",
+        subcategory: "Carnes",
       },
     ],
   },
@@ -174,18 +198,213 @@ const menuSections: MenuSection[] = [
   },
 ];
 
-const navSections = ["entradas", "hamburguesas", "sandwiches", "bebidas", "postres"]
-  .map((id) => menuSections.find((section) => section.id === id))
-  .filter((section): section is MenuSection => Boolean(section));
+function getDishes(sectionId: string): Dish[] {
+  return menuSections.find((section) => section.id === sectionId)?.dishes ?? [];
+}
+
+const cocktailDishes: Dish[] = [
+  {
+    name: "Borgoña",
+    ingredients: "Vino tinto 120 ml · fresas frescas 60 g · triple sec 10 ml · azúcar 10 g",
+    description: "Ponche chileno fresco y frutal. El vino tinto y las fresas se integran en un trago amable, jugoso y refrescante.",
+    price: "$3.50",
+    subcategory: "Cócteles de Autor",
+  },
+  {
+    name: "Black Widow",
+    ingredients: "Tequila blanco 45 ml · zumo de lima 30 ml · néctar de agave 5 ml · 2 moras · 3 hojas de albahaca",
+    description: "Intenso, fresco y herbal. La mora aporta fruta y color, mientras la albahaca y la lima afinan el carácter del tequila.",
+    price: "$4.20",
+    subcategory: "Cócteles de Autor",
+  },
+  {
+    name: "Daiquiri",
+    ingredients: "Ron Havana Club 3 Años 60 ml · marasquino 15 ml · zumo de limón 10 ml · azúcar blanca 15 g",
+    description: "Clásico cubano: fresco, seco y preciso. Ron blanco, limón y dulzor medido para un trago limpio y muy gastronómico.",
+    price: "$3.80",
+    subcategory: "Coctelería Nacional",
+  },
+  {
+    name: "Mojito Origen",
+    ingredients: "Havana Club 3 Años 60 ml · azúcar blanca 15 g · zumo de limón 10 ml · hierbabuena · 1 dash de angostura",
+    description: "Nuestro mojito respeta la raíz cubana y suma un final aromático con angostura. Fresco, herbal y perfecto para abrir mesa.",
+    price: "$3.00",
+    subcategory: "Coctelería Nacional",
+  },
+  {
+    name: "Canchánchara Origen",
+    ingredients: "Aguardiente 60 ml · zumo de limón 30 ml · miel de abejas 30 ml",
+    description: "Tradición cubana en vaso: aguardiente, miel y limón. Rústico, noble y con ese golpe antiguo que nunca pasa de moda.",
+    price: "$3.50",
+    subcategory: "Coctelería Nacional",
+  },
+  {
+    name: "Cuba Libre",
+    ingredients: "Ron Havana Club 3 Años 60 ml · refresco de cola 150 ml",
+    description: "Un imprescindible de barra: ron cubano y cola, servido frío y largo. Simple cuando debe ser simple; bien hecho, como manda la casa.",
+    price: "$3.50",
+    subcategory: "Coctelería Nacional",
+  },
+  {
+    name: "Cubata",
+    ingredients: "Ron Havana Club 7 Años 60 ml · refresco de cola 150 ml",
+    description: "La versión más profunda del Cuba Libre. El ron añejo aporta madera, vainilla y cuerpo, con cola para un trago largo y redondo.",
+    price: "$3.90",
+    subcategory: "Coctelería Nacional",
+  },
+  {
+    name: "Cubanito",
+    ingredients: "Ron blanco 60 ml · jugo de tomate 120 ml · salsa inglesa 5 ml · zumo de limón 5 ml · sal 0.5 g",
+    description: "El primo cubano del Bloody Mary. Tomate, ron blanco, limón y sazón: salino, especiado y con mucha personalidad.",
+    price: "$3.90",
+    subcategory: "Coctelería Nacional",
+  },
+  {
+    name: "Piña Colada Origen",
+    ingredients: "Havana Club 3 Años 60 ml · crema de coco 30 ml · zumo de piña 40 ml · azúcar 30 g",
+    description: "Coco, piña y ron cubano en clave tropical. Cremosa, amable y festiva, ideal para quien quiere Caribe en estado líquido.",
+    price: "$3.50",
+    subcategory: "Coctelería Nacional",
+  },
+  {
+    name: "Negroni",
+    ingredients: "Ginebra 30 ml · Campari 30 ml · vermouth rosso 30 ml",
+    description: "Amargo, intenso y elegante. Un clásico italiano de partes iguales, perfecto para paladares que buscan carácter y final largo.",
+    price: "$4.20",
+    subcategory: "Coctelería Internacional",
+  },
+  {
+    name: "Old Fashioned",
+    ingredients: "Whisky bourbon 60 ml · azúcar 15 g · 3 dash de angostura",
+    description: "Whisky al frente, sin maquillaje. Azúcar y angostura integran el bourbon en un trago clásico, serio y de sobremesa.",
+    price: "$6.50",
+    subcategory: "Coctelería Internacional",
+  },
+  {
+    name: "Margarita",
+    ingredients: "Tequila 60 ml · triple sec 15 ml · zumo de limón 15 ml · sal 1 g",
+    description: "Ácida, salina y vibrante. Tequila, cítrico y triple sec en una mezcla limpia que despierta el apetito.",
+    price: "$3.50",
+    subcategory: "Coctelería Internacional",
+  },
+  {
+    name: "Dry Martini",
+    ingredients: "Ginebra 60 ml · vermouth dry 10 ml · 1 aceituna",
+    description: "Seco, frío y exacto. Ginebra con un velo de vermouth dry y aceituna: minimalismo de barra, sin pedir permiso.",
+    price: "$3.50",
+    subcategory: "Coctelería Internacional",
+  },
+  {
+    name: "Fernet con Cola",
+    ingredients: "Fernet 60 ml · refresco de cola 120 ml",
+    description: "Herbal, amargo y popular. El Fernet marca el pulso y la cola lo vuelve largo, refrescante y muy argentino.",
+    price: "$3.50",
+    subcategory: "Coctelería Internacional",
+  },
+  {
+    name: "Screwdriver",
+    ingredients: "Vodka 60 ml · zumo de naranja 120 ml",
+    description: "Vodka y naranja en versión directa. Frutal, fácil de beber y perfecto para quien busca frescura sin complicarse.",
+    price: "$3.00",
+    subcategory: "Coctelería Internacional",
+  },
+  {
+    name: "Aperol Spritz",
+    ingredients: "Aperol 60 ml · Prosecco 120 ml · agua gaseada 30 ml",
+    description: "Burbujeante, cítrico y luminoso. Aperol, Prosecco y soda para un aperitivo elegante, ligero y con espíritu italiano.",
+    price: "$7.90",
+    subcategory: "Coctelería Internacional",
+  },
+];
+
+const principalDishes: Dish[] = [
+  {
+    name: "Sirloin Steak / 200g",
+    description:
+      "Sirloin premium, preparado con precisión y presentado sobre una piedra negra caliente.",
+    price: "$25.00",
+    subcategory: "Cortes a la Piedra",
+  },
+  {
+    name: "Ribeye / 200g",
+    description:
+      "Ribeye premium sellado y servido sobre piedra negra ardiente, liberando su marmoleo, riqueza y sabor profundo.",
+    price: "$25.00",
+    subcategory: "Cortes a la Piedra",
+  },
+  {
+    name: "Filete de Res / 200g",
+    description:
+      "Filete de res premium, sellado y terminado sobre piedra negra ardiente, con ternura excepcional y sabor intenso.",
+    price: "$28.50",
+    subcategory: "Cortes a la Piedra",
+  },
+  {
+    name: "Servicio incluido",
+    description:
+      "Todas las selecciones de carne se sirven con patatas fritas doradas, ensalada fresca y chimichurri argentino casero.",
+    price: "",
+    note: true,
+    subcategory: "Cortes a la Piedra",
+  },
+  {
+    name: "Curry Signature Origen",
+    description:
+      "Pechuga de pollo asada con arroz jazmín y curry rojo artesanal elaborado con ajíes dulces cubanos y leche de coco.",
+    price: "$21.50",
+    subcategory: "Principales de Autor",
+  },
+  {
+    name: "Burger Signature Origen",
+    description:
+      "Carne premium, queso fundido, bacon, cebolla crujiente y nuestra famosa mayonesa secreta.",
+    price: "$18.50",
+    subcategory: "Principales de Autor",
+  },
+  {
+    name: "Pescado Blanco Sedoso",
+    description:
+      "Pescado blanco fresco sobre salsa de leche de coco, con patatas españolas doradas en un jugo delicado. Servido con arroz jazmín.",
+    price: "$19.50",
+    subcategory: "Pescados & Mariscos",
+  },
+];
+const navSections: MenuSection[] = [
+  {
+    id: "cocteleria",
+    label: "Coctelería",
+    dishes: cocktailDishes,
+  },
+  {
+    id: "entrantes",
+    label: "Entrantes",
+    dishes: getDishes("entradas"),
+  },
+  {
+    id: "platos-principales",
+    label: "Platos Principales",
+    dishes: principalDishes,
+  },
+  {
+    id: "postres",
+    label: "Postres",
+    dishes: getDishes("postres"),
+  },
+  {
+    id: "cafe-aperitivos",
+    label: "Café y Aperitivos",
+    dishes: [],
+  },
+];
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("hamburguesas");
+  const [activeSection, setActiveSection] = useState("cocteleria");
   const [navOverflow, setNavOverflow] = useState({ left: false, right: false });
   const [ripples, setRipples] = useState<Record<string, Ripple[]>>({});
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const sections = menuSections
+    const sections = navSections
       .map(({ id }) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
     let animationFrame = 0;
@@ -363,7 +582,7 @@ export default function Home() {
       </div>
 
       <div className="menu-content">
-        {menuSections.map((section) => (
+        {navSections.map((section) => (
           <section
             id={section.id}
             className="menu-section"
@@ -372,31 +591,52 @@ export default function Home() {
           >
             <h2 id={`${section.id}-title`}>{section.label}</h2>
             <div className="dish-list">
-              {section.dishes.map((dish) => (
-                <article
-                  className="dish"
-                  key={dish.name}
-                  onPointerDown={(event) => createDishRipple(event, dish.name)}
-                >
-                  {(ripples[dish.name] ?? []).map((ripple) => (
-                    <span
-                      aria-hidden="true"
-                      className="dish-ripple"
-                      key={ripple.id}
-                      style={{
-                        height: ripple.size,
-                        left: ripple.x,
-                        top: ripple.y,
-                        width: ripple.size,
-                      }}
-                    />
-                  ))}
-                  <div className="dish-copy">
-                    <h3>{dish.name}</h3>
-                    <p>{dish.description}</p>
-                  </div>
-                  <span className="dish-price">{dish.price}</span>
-                </article>
+              {section.dishes.map((dish, index) => (
+                <Fragment key={dish.name}>
+                  {dish.subcategory &&
+                    dish.subcategory !==
+                      section.dishes[index - 1]?.subcategory && (
+                      <h3 className="dish-subcategory">{dish.subcategory}</h3>
+                    )}
+                  <article
+                    className="dish"
+                    onPointerDown={(event) => createDishRipple(event, dish.name)}
+                  >
+                    {(ripples[dish.name] ?? []).map((ripple) => (
+                      <span
+                        aria-hidden="true"
+                        className="dish-ripple"
+                        key={ripple.id}
+                        style={{
+                          height: ripple.size,
+                          left: ripple.x,
+                          top: ripple.y,
+                          width: ripple.size,
+                        }}
+                      />
+                    ))}
+                    {dish.note ? (
+                      <p className="dish-note">{dish.description}</p>
+                    ) : (
+                      <>
+                        <div className="dish-copy">
+                          {dish.subcategory ? (
+                            <h4>{dish.name}</h4>
+                          ) : (
+                            <h3>{dish.name}</h3>
+                          )}
+                          {dish.ingredients && (
+                            <p className="dish-ingredients">
+                              <strong>Ing.:</strong> {dish.ingredients}
+                            </p>
+                          )}
+                          <p>{dish.description}</p>
+                        </div>
+                        <span className="dish-price">{dish.price}</span>
+                      </>
+                    )}
+                  </article>
+                </Fragment>
               ))}
             </div>
           </section>
