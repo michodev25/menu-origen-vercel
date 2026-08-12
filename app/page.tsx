@@ -519,7 +519,7 @@ const principalDishes: Dish[] = [
     name: "Curry Signature Origen",
     description:
       "Pechuga de pollo asada con arroz jazmín y curry rojo artesanal elaborado con ajíes dulces cubanos y leche de coco.",
-    price: "$20.00",
+    price: "$17.00",
     subcategory: "Principales de Autor",
   },
   {
