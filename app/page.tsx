@@ -412,12 +412,6 @@ const cocktailDishes: Dish[] = [
     subcategory: "Coctelería Origen",
   },
   {
-    name: "Limonada Origen",
-    description: "Limonada fresca de la casa con un perfil limpio y cítrico.",
-    price: "$2.00",
-    subcategory: "Coctelería Origen",
-  },
-  {
     name: "Caipiroska",
     description: "Vodka, lima y azúcar en una variación fresca de la caipirinha.",
     price: "$4.00",
@@ -452,6 +446,12 @@ const cocktailDishes: Dish[] = [
     description: "Ron blanco, limón y azúcar en un clásico cubano limpio y equilibrado.",
     price: "$3.00",
     subcategory: "Coctelería Origen",
+  },
+  {
+    name: "Limonada Origen",
+    description: "Limonada fresca de la casa con un perfil limpio y cítrico.",
+    price: "$2.00",
+    subcategory: "Líquidos Origen",
   },
   {
     name: "Limonada Mega Mix",
@@ -519,7 +519,7 @@ const principalDishes: Dish[] = [
     name: "Curry Signature Origen",
     description:
       "Pechuga de pollo asada con arroz jazmín y curry rojo artesanal elaborado con ajíes dulces cubanos y leche de coco.",
-    price: "$21.50",
+    price: "$20.00",
     subcategory: "Principales de Autor",
   },
   {
