@@ -52,6 +52,13 @@ const menuSections: MenuSection[] = [
         subcategory: "Vegetariano & Fresco",
       },
       {
+        name: "Gazpacho de Remolacha",
+        description:
+          "Crema fría de remolacha con tomate, pepino y un toque de limón; fresca, ligera y de sabor delicadamente dulce.",
+        price: "$1.50",
+        subcategory: "Vegetariano & Fresco",
+      },
+      {
         name: "Tabla de Queso Manchego Curado",
         description:
           "Queso manchego maduro, de sabor profundo, notas de frutos secos y textura firme.",
@@ -70,6 +77,13 @@ const menuSections: MenuSection[] = [
         description:
           "Hojas frescas con salsa César sedosa, queso pecorino, bacon crujiente y croutons.",
         price: "$7.00",
+        subcategory: "Quesos & Ensaladas",
+      },
+      {
+        name: "Ensalada Burrata Ahumada",
+        description:
+          "Burrata ligeramente ahumada con tomates frescos de temporada y aliño suave que realza su cremosidad.",
+        price: "$10.00",
         subcategory: "Quesos & Ensaladas",
       },
       {
@@ -197,6 +211,12 @@ const menuSections: MenuSection[] = [
         price: "$5.00",
       },
       {
+        name: "Coulant de Chocolate",
+        description:
+          "Bizcocho de chocolate de corazón fundente, servido tibio para una experiencia intensa y cremosa.",
+        price: "$6.00",
+      },
+      {
         name: "Postre del Día",
         description:
           "Consulte con nuestro equipo la selección fresca preparada para hoy.",
@@ -215,6 +235,12 @@ const cocktailDishes: Dish[] = [
     name: "El Bodegón",
     description: "Trago de autor fresco y frutal, elaborado con vino tinto, fresas y un balance amable de dulzor.",
     price: "$5.00",
+    subcategory: "Coctelería de Autor",
+  },
+  {
+    name: "Golpe Bajo",
+    description: "Tequila blanco, limón, jengibre y angostura en un trago directo, cítrico y especiado.",
+    price: "$3.00",
     subcategory: "Coctelería de Autor",
   },
   {
@@ -305,7 +331,7 @@ const cocktailDishes: Dish[] = [
     name: "Limonada Mega Mix",
     description: "Limonada de la casa con mezcla frutal y carácter refrescante.",
     price: "$4.00",
-    subcategory: "Coctelería Origen",
+    subcategory: "Líquidos Origen",
   },
   {
     name: "Fernet con Cola",
@@ -341,7 +367,7 @@ const cocktailDishes: Dish[] = [
     name: "Black Widow",
     description: "Tequila, mora, albahaca y lima en un trago intenso, fresco y herbal.",
     price: "$4.00",
-    subcategory: "Coctelería Origen",
+    subcategory: "Coctelería de Autor",
   },
   {
     name: "Canchánchara",
@@ -488,6 +514,13 @@ const principalDishes: Dish[] = [
     description:
       "Pechuga de pollo asada con arroz jazmín y curry rojo artesanal elaborado con ajíes dulces cubanos y leche de coco.",
     price: "$21.50",
+    subcategory: "Principales de Autor",
+  },
+  {
+    name: "Sopa de Curry con Mariscos",
+    description:
+      "Cremosa sopa de mariscos en caldo de coco y curry aromático, con un sutil toque de hierbas frescas.",
+    price: "$10.00",
     subcategory: "Principales de Autor",
   },
   {
