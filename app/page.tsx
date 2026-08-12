@@ -283,7 +283,7 @@ const cocktailDishes: Dish[] = [
     name: "Cuba Libre",
     description: "Ron cubano y refresco de cola servidos fríos en un trago largo.",
     price: "$3.00",
-    subcategory: "Bebidas Alcohólicas",
+    subcategory: "Coctelería Origen",
   },
   {
     name: "Aperol Spritz",
