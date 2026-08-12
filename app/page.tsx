@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import { Fragment, useEffect, useRef, useState } from "react";
+import {
+  languageOptions,
+  translations,
+  type LanguageCode,
+} from "./menu-translations";
 
 type Dish = {
   name: string;
@@ -24,6 +29,7 @@ type MenuSection = {
   label: string;
   dishes: Dish[];
 };
+
 
 const menuSections: MenuSection[] = [
   {
@@ -262,6 +268,12 @@ const cocktailDishes: Dish[] = [
     subcategory: "Coctelería de Autor",
   },
   {
+    name: "Black Widow",
+    description: "Tequila, mora, albahaca y lima en un trago intenso, fresco y herbal.",
+    price: "$4.00",
+    subcategory: "Coctelería de Autor",
+  },
+  {
     name: "Cerveza Cristal Botella",
     description: "Cerveza clara, ligera y refrescante servida en botella.",
     price: "$3.00",
@@ -328,12 +340,6 @@ const cocktailDishes: Dish[] = [
     subcategory: "Coctelería Origen",
   },
   {
-    name: "Limonada Mega Mix",
-    description: "Limonada de la casa con mezcla frutal y carácter refrescante.",
-    price: "$4.00",
-    subcategory: "Líquidos Origen",
-  },
-  {
     name: "Fernet con Cola",
     description: "Fernet herbal y amargo suavizado con refresco de cola.",
     price: "$7.00",
@@ -362,12 +368,6 @@ const cocktailDishes: Dish[] = [
     description: "Vino blanco y frutas frescas en una versión ligera y aromática.",
     price: "$6.00",
     subcategory: "Coctelería Origen",
-  },
-  {
-    name: "Black Widow",
-    description: "Tequila, mora, albahaca y lima en un trago intenso, fresco y herbal.",
-    price: "$4.00",
-    subcategory: "Coctelería de Autor",
   },
   {
     name: "Canchánchara",
@@ -452,6 +452,12 @@ const cocktailDishes: Dish[] = [
     description: "Ron blanco, limón y azúcar en un clásico cubano limpio y equilibrado.",
     price: "$3.00",
     subcategory: "Coctelería Origen",
+  },
+  {
+    name: "Limonada Mega Mix",
+    description: "Limonada de la casa con mezcla frutal y carácter refrescante.",
+    price: "$4.00",
+    subcategory: "Líquidos Origen",
   },
   {
     name: "Agua Gaseada",
@@ -687,7 +693,22 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("cocteleria");
   const [navOverflow, setNavOverflow] = useState({ left: false, right: false });
   const [ripples, setRipples] = useState<Record<string, Ripple[]>>({});
+  const [selectedLanguage, setSelectedLanguage] = useState<LanguageCode>("ES");
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
+  const selectedLanguageOption =
+    languageOptions.find((language) => language.code === selectedLanguage) ??
+    languageOptions[0];
+  const selectedLanguageLabel = selectedLanguageOption.label;
+
+  function translate(text: string) {
+    return translations[selectedLanguage][text] ?? text;
+  }
+
+  useEffect(() => {
+    document.documentElement.lang = selectedLanguageOption.locale;
+  }, [selectedLanguageOption.locale]);
 
   useEffect(() => {
     const sections = navSections
@@ -760,6 +781,28 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (!isLanguageMenuOpen) return;
+
+    const closeLanguageMenu = (event: PointerEvent) => {
+      if (!languageMenuRef.current?.contains(event.target as Node)) {
+        setIsLanguageMenuOpen(false);
+      }
+    };
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsLanguageMenuOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeLanguageMenu);
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.removeEventListener("pointerdown", closeLanguageMenu);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isLanguageMenuOpen]);
+
+  useEffect(() => {
     const activeLink = navRef.current?.querySelector<HTMLAnchorElement>(
       `[href="#${activeSection}"]`,
     );
@@ -816,18 +859,52 @@ export default function Home() {
 
   return (
     <main id="top">
-      <header className="brand-header" aria-label="Origen La Habana">
+      <header className="brand-header" aria-label={translate("The Origen, La Habana, establecido en 2025")}>
+        <div className="language-switcher" ref={languageMenuRef}>
+          <button
+            type="button"
+            className="language-trigger"
+            aria-expanded={isLanguageMenuOpen}
+            aria-controls="language-options"
+            aria-label={`${translate("Seleccionar idioma")}: ${selectedLanguageLabel}`}
+            onClick={() => setIsLanguageMenuOpen((current) => !current)}
+          >
+            {selectedLanguage}
+            <span aria-hidden="true">⌄</span>
+          </button>
+          {isLanguageMenuOpen && (
+            <div id="language-options" className="language-options">
+              {languageOptions.map((language) => (
+                <button
+                  type="button"
+                  className={
+                    language.code === selectedLanguage ? "is-selected" : undefined
+                  }
+                  key={language.code}
+                  lang={language.locale}
+                  aria-pressed={language.code === selectedLanguage}
+                  onClick={() => {
+                    setSelectedLanguage(language.code);
+                    setIsLanguageMenuOpen(false);
+                  }}
+                >
+                  {language.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         <Image
           className="brand-logo"
           src="/assets/origen-logo.png"
-          alt="The Origen, La Habana, establecido en 2025"
+          alt={translate("The Origen, La Habana, establecido en 2025")}
           width={762}
           height={699}
           priority
         />
       </header>
 
-      <h1 className="menu-title">Menú</h1>
+      <h1 className="menu-title">{translate("Menú")}</h1>
 
       <div
         className={`category-nav-wrap${navOverflow.left ? " has-left-overflow" : ""}${navOverflow.right ? " has-right-overflow" : ""}`}
@@ -835,7 +912,7 @@ export default function Home() {
         <button
           type="button"
           className="category-edge category-edge-left"
-          aria-label="Ver categorías anteriores"
+          aria-label={translate("Ver categorías anteriores")}
           onClick={() => scrollCategories(-1)}
         >
           {"\u2039"}
@@ -843,7 +920,7 @@ export default function Home() {
         <nav
           ref={navRef}
           className="category-nav"
-          aria-label="Categorías del menú"
+          aria-label={translate("Categorías del menú")}
         >
           {navSections.map((section) => (
             <a
@@ -853,14 +930,14 @@ export default function Home() {
               aria-current={activeSection === section.id ? "location" : undefined}
               onClick={() => selectCategory(section.id)}
             >
-              {section.label}
+              {translate(section.label)}
             </a>
           ))}
         </nav>
         <button
           type="button"
           className="category-edge category-edge-right"
-          aria-label="Ver más categorías"
+          aria-label={translate("Ver más categorías")}
           onClick={() => scrollCategories(1)}
         >
           {"\u203a"}
@@ -875,14 +952,16 @@ export default function Home() {
             key={section.id}
             aria-labelledby={`${section.id}-title`}
           >
-            <h2 id={`${section.id}-title`}>{section.label}</h2>
+            <h2 id={`${section.id}-title`}>{translate(section.label)}</h2>
             <div className="dish-list">
               {section.dishes.map((dish, index) => (
                 <Fragment key={dish.name}>
                   {dish.subcategory &&
                     dish.subcategory !==
                       section.dishes[index - 1]?.subcategory && (
-                      <h3 className="dish-subcategory">{dish.subcategory}</h3>
+                      <h3 className="dish-subcategory">
+                        {translate(dish.subcategory)}
+                      </h3>
                     )}
                   <article
                     className="dish"
@@ -902,21 +981,22 @@ export default function Home() {
                       />
                     ))}
                     {dish.note ? (
-                      <p className="dish-note">{dish.description}</p>
+                      <p className="dish-note">{translate(dish.description)}</p>
                     ) : (
                       <>
                         <div className="dish-copy">
                           {dish.subcategory ? (
-                            <h4>{dish.name}</h4>
+                            <h4>{translate(dish.name)}</h4>
                           ) : (
-                            <h3>{dish.name}</h3>
+                            <h3>{translate(dish.name)}</h3>
                           )}
                           {dish.ingredients && (
                             <p className="dish-ingredients">
-                              <strong>Ing.:</strong> {dish.ingredients}
+                              <strong>{translate("Ingredientes")}:</strong>{" "}
+                              {translate(dish.ingredients)}
                             </p>
                           )}
-                          <p>{dish.description}</p>
+                          <p>{translate(dish.description)}</p>
                         </div>
                         <span className="dish-price">{dish.price}</span>
                       </>
@@ -930,10 +1010,14 @@ export default function Home() {
       </div>
 
       <footer className="site-footer">
-        <a className="footer-brand" href="#top" aria-label="Volver al inicio">
+        <a
+          className="footer-brand"
+          href="#top"
+          aria-label={translate("Volver al inicio")}
+        >
           The Origen
         </a>
-        <span>La Habana · ESTD 2025</span>
+        <span>{translate("La Habana · ESTD 2025")}</span>
       </footer>
     </main>
   );

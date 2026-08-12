@@ -52,10 +52,90 @@ a {
 }
 
 .brand-header {
+  position: relative;
   display: grid;
   min-height: clamp(390px, 62vw, 610px);
   place-items: center;
   padding: 20px 24px 26px;
+}
+
+.language-switcher {
+  position: absolute;
+  top: 26px;
+  right: clamp(18px, 3vw, 38px);
+  z-index: 5;
+}
+
+.language-trigger {
+  display: inline-flex;
+  min-width: 58px;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.language-trigger span {
+  margin-top: -3px;
+  font-size: 1rem;
+  line-height: 0;
+}
+
+.language-trigger:hover,
+.language-trigger[aria-expanded="true"] {
+  background: var(--black);
+  color: var(--white);
+}
+
+.language-trigger:focus-visible,
+.language-options button:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+.language-options {
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+  width: 174px;
+  border: 1px solid var(--black);
+  background: var(--white);
+}
+
+.language-options button {
+  display: flex;
+  width: 100%;
+  min-height: 46px;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  padding: 0 15px;
+  text-align: left;
+}
+
+.language-options button:last-child {
+  border-bottom: 0;
+}
+
+.language-options button:hover,
+.language-options button.is-selected {
+  background: var(--black);
+  color: var(--white);
 }
 
 .brand-logo {
@@ -235,10 +315,9 @@ a {
 }
 
 .dish-subcategory {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  position: relative;
   margin: 42px 0 4px;
+  padding-bottom: 14px;
   font-size: clamp(0.88rem, 2.1vw, 1.2rem);
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -251,13 +330,14 @@ a {
 }
 
 .dish-subcategory::after {
-  min-width: 32px;
-  height: 1px;
-  flex: 1 1 auto;
-  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
   background: var(--black);
   content: "";
-  opacity: 0.45;
+  opacity: 0.42;
 }
 
 .dish {
@@ -367,6 +447,16 @@ a {
   .brand-header {
     min-height: 390px;
     padding-top: 12px;
+  }
+
+  .language-switcher {
+    top: 16px;
+    right: 16px;
+  }
+
+  .language-trigger {
+    min-width: 56px;
+    min-height: 40px;
   }
 
   .brand-logo {
