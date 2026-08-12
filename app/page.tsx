@@ -533,7 +533,7 @@ const principalDishes: Dish[] = [
     name: "Burger Signature Origen",
     description:
       "Carne premium, queso fundido, bacon, cebolla crujiente y nuestra famosa mayonesa secreta.",
-    price: "$15.00",
+    price: "$16.00",
     subcategory: "Principales de Autor",
   },
   {
