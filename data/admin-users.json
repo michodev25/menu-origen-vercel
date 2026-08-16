@@ -1,0 +1,20 @@
+[
+  {
+    "username": "viper",
+    "passwordHash": "ef3d0d0ae006e24ebc3d5f38ca3ec489:fb977136e74fa7638f0f187c5ca939919eb5b3a4b650a632485b6557f677c1899556e13f44a4f04eae3eb467885e39e97cbb8fbbf4963b1dd7603d2c79307aca",
+    "role": "editor",
+    "active": true
+  },
+  {
+    "username": "ivan",
+    "passwordHash": "02a4f0336c155bdbe86b5b79583ed911:3c1f13e32957be9bd9e2e0c0a1b75ddfda29506dc2a96222381d04b111d3214f70174ca9e052d18029470df27ebf00ea31b9d4ab516ba20e10f9b28da856ab0b",
+    "role": "editor",
+    "active": true
+  },
+  {
+    "username": "admin",
+    "passwordHash": "49c6ad4ece8b2454469e45676ac014e7:58017731afe3f210c3cee2861a5ec6370eb19ad86e3a74baf99bb01df6f9ddfb3a120a3d290317bea46c11b4e51c08a6fae874df61087371806a25fa6c17fdaf",
+    "role": "editor",
+    "active": true
+  }
+]

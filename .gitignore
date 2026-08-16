@@ -5,6 +5,8 @@ out/
 .env*
 !.env.example
 npm-debug.log*
+*.tsbuildinfo
+data/menu.backup.json
 .DS_Store
 
 

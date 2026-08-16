@@ -1,0 +1,920 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-12T18:43:43.437Z",
+  "updatedBy": "admin",
+  "categories": [
+    {
+      "id": "cocteleria",
+      "name": "Coctelería",
+      "visible": true,
+      "order": 0,
+      "subcategories": [
+        {
+          "id": "cocteleria-cocteleria-de-autor",
+          "name": "Coctelería de Autor",
+          "showHeading": true,
+          "visible": true,
+          "order": 0,
+          "dishes": [
+            {
+              "id": "cocteleria-cocteleria-de-autor-el-bodegon",
+              "name": "El Bodegón",
+              "description": "Trago de autor fresco y frutal, elaborado con vino tinto, fresas y un balance amable de dulzor.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "cocteleria-cocteleria-de-autor-golpe-bajo",
+              "name": "Golpe Bajo",
+              "description": "Tequila blanco, limón, jengibre y angostura en un trago directo, cítrico y especiado.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "cocteleria-cocteleria-de-autor-coco-bay",
+              "name": "Coco Bay",
+              "description": "Cóctel cremoso y tropical con ron, coco, vainilla y un toque de limón.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "cocteleria-cocteleria-de-autor-marley-sun",
+              "name": "Marley Sun",
+              "description": "Vodka, flor de Jamaica y piña en un trago frutal, floral y refrescante.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 3
+            },
+            {
+              "id": "cocteleria-cocteleria-de-autor-natural-origen",
+              "name": "Natural Origen",
+              "description": "Creación fresca de la casa con perfil natural, ligero y equilibrado.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 4
+            },
+            {
+              "id": "cocteleria-cocteleria-de-autor-black-widow",
+              "name": "Black Widow",
+              "description": "Tequila, mora, albahaca y lima en un trago intenso, fresco y herbal.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 5
+            }
+          ]
+        },
+        {
+          "id": "cocteleria-bebidas-alcoholicas",
+          "name": "Bebidas Alcohólicas",
+          "showHeading": true,
+          "visible": true,
+          "order": 1,
+          "dishes": [
+            {
+              "id": "cocteleria-bebidas-alcoholicas-cerveza-cristal-botella",
+              "name": "Cerveza Cristal Botella",
+              "description": "Cerveza clara, ligera y refrescante servida en botella.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "cocteleria-bebidas-alcoholicas-cerveza-heineken",
+              "name": "Cerveza Heineken",
+              "description": "Lager de perfil limpio, equilibrado y refrescante.",
+              "price": "$2.50",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "cocteleria-bebidas-alcoholicas-cerveza-stella",
+              "name": "Cerveza Stella",
+              "description": "Lager europea de cuerpo ligero y final suavemente amargo.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "cocteleria-cocteleria-origen",
+          "name": "Coctelería Origen",
+          "showHeading": true,
+          "visible": true,
+          "order": 2,
+          "dishes": [
+            {
+              "id": "cocteleria-cocteleria-origen-cuba-libre",
+              "name": "Cuba Libre",
+              "description": "Ron cubano y refresco de cola servidos fríos en un trago largo.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-aperol-spritz",
+              "name": "Aperol Spritz",
+              "description": "Aperol, Prosecco y soda en un cóctel cítrico, ligero y burbujeante.",
+              "price": "$8.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-cubetazo-origen",
+              "name": "Cubetazo Origen",
+              "description": "Selección de la casa en formato para compartir y disfrutar bien fría.",
+              "price": "$10.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-old-fashioned",
+              "name": "Old Fashioned",
+              "description": "Whisky, azúcar y angostura en un clásico intenso y de final profundo.",
+              "price": "$7.00",
+              "visible": true,
+              "order": 3
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-gin-tonic",
+              "name": "Gin Tonic",
+              "description": "Ginebra y tónica servidas con hielo y un toque cítrico.",
+              "price": "$8.00",
+              "visible": true,
+              "order": 4
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-long-island-ice-tea",
+              "name": "Long Island Ice Tea",
+              "description": "Mezcla intensa de destilados, cítricos y cola en un trago largo.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 5
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-gin-tonic-terraza",
+              "name": "Gin Tonic Terraza",
+              "description": "Versión fresca de la casa con ginebra, tónica y notas aromáticas.",
+              "price": "$7.00",
+              "visible": true,
+              "order": 6
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-calimocho",
+              "name": "Calimocho",
+              "description": "Vino tinto y cola en una mezcla sencilla, fresca y frutal.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 7
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-fernet-con-cola",
+              "name": "Fernet con Cola",
+              "description": "Fernet herbal y amargo suavizado con refresco de cola.",
+              "price": "$7.00",
+              "visible": true,
+              "order": 8
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-cubata",
+              "name": "Cubata",
+              "description": "Ron añejo y cola en un trago largo, profundo y redondo.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 9
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-negroni",
+              "name": "Negroni",
+              "description": "Ginebra, Campari y vermut rojo en un clásico amargo e intenso.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 10
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-sangria-origen",
+              "name": "Sangría Origen",
+              "description": "Vino tinto, frutas y notas cítricas en una sangría fresca de la casa.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 11
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-sangria-blanca-origen",
+              "name": "Sangría Blanca Origen",
+              "description": "Vino blanco y frutas frescas en una versión ligera y aromática.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 12
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-canchanchara",
+              "name": "Canchánchara",
+              "description": "Aguardiente, miel y limón en un clásico cubano rústico y aromático.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 13
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-dry-martini",
+              "name": "Dry Martini",
+              "description": "Ginebra y vermut seco en un cóctel frío, limpio y preciso.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 14
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-caipirinha",
+              "name": "Caipirinha",
+              "description": "Cachaça, lima y azúcar en un clásico brasileño vibrante.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 15
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-margarita",
+              "name": "Margarita",
+              "description": "Tequila, triple sec y limón en una mezcla ácida, salina y refrescante.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 16
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-mojito-origen",
+              "name": "Mojito Origen",
+              "description": "Ron, hierbabuena, limón y azúcar con el toque aromático de la casa.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 17
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-screwdriver",
+              "name": "Screwdriver",
+              "description": "Vodka y naranja en una combinación directa, frutal y refrescante.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 18
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-pina-colada-origen",
+              "name": "Piña Colada Origen",
+              "description": "Ron, coco y piña en un cóctel tropical, cremoso y amable.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 19
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-caipiroska",
+              "name": "Caipiroska",
+              "description": "Vodka, lima y azúcar en una variación fresca de la caipirinha.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 20
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-servicio-michelada",
+              "name": "Servicio Michelada",
+              "description": "Preparación especiada y cítrica para acompañar su cerveza.",
+              "price": "$1.50",
+              "visible": true,
+              "order": 21
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-caipirisma",
+              "name": "Caipirisma",
+              "description": "Cóctel cítrico y refrescante inspirado en la caipirinha.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 22
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-servicio-chelada",
+              "name": "Servicio Chelada",
+              "description": "Preparación de limón y sal para acompañar su cerveza.",
+              "price": "$1.00",
+              "visible": true,
+              "order": 23
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-expresso-martini",
+              "name": "Expresso Martini",
+              "description": "Vodka, café espresso y licor de café en un cóctel intenso y sedoso.",
+              "price": "$8.00",
+              "visible": true,
+              "order": 24
+            },
+            {
+              "id": "cocteleria-cocteleria-origen-daiquiri",
+              "name": "Daiquiri",
+              "description": "Ron blanco, limón y azúcar en un clásico cubano limpio y equilibrado.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 25
+            }
+          ]
+        },
+        {
+          "id": "cocteleria-liquidos-origen",
+          "name": "Líquidos Origen",
+          "showHeading": true,
+          "visible": true,
+          "order": 3,
+          "dishes": [
+            {
+              "id": "cocteleria-liquidos-origen-limonada-origen",
+              "name": "Limonada Origen",
+              "description": "Limonada fresca de la casa con un perfil limpio y cítrico.",
+              "price": "$2.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "cocteleria-liquidos-origen-limonada-mega-mix",
+              "name": "Limonada Mega Mix",
+              "description": "Limonada de la casa con mezcla frutal y carácter refrescante.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "cocteleria-liquidos-origen-agua-gaseada",
+              "name": "Agua Gaseada",
+              "description": "Agua refrescante con gas.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "cocteleria-liquidos-origen-pepsi-cola",
+              "name": "Pepsi Cola",
+              "description": "Refresco de cola servido bien frío.",
+              "price": "$2.50",
+              "visible": true,
+              "order": 3
+            },
+            {
+              "id": "cocteleria-liquidos-origen-agua-dea-250-ml",
+              "name": "Agua Dea (250 ml)",
+              "description": "Agua mineral en presentación de 250 ml.",
+              "price": "$2.00",
+              "visible": true,
+              "order": 4
+            },
+            {
+              "id": "cocteleria-liquidos-origen-jugo-natural",
+              "name": "Jugo Natural",
+              "description": "Jugo fresco preparado con fruta natural.",
+              "price": "$2.00",
+              "visible": true,
+              "order": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entrantes",
+      "name": "Entrantes",
+      "visible": true,
+      "order": 1,
+      "subcategories": [
+        {
+          "id": "entrantes-vegetariano-y-fresco",
+          "name": "Vegetariano & Fresco",
+          "showHeading": true,
+          "visible": true,
+          "order": 0,
+          "dishes": [
+            {
+              "id": "entrantes-vegetariano-y-fresco-pimientos-del-piquillo-rellenos",
+              "name": "Pimientos del Piquillo Rellenos",
+              "description": "Pimientos del piquillo asados, rellenos con una preparación rica y delicada.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "entrantes-vegetariano-y-fresco-pan-tostado-con-tomate",
+              "name": "Pan Tostado con Tomate",
+              "description": "Pan crujiente con tomate fresco triturado, aceite de oliva virgen extra y un toque de sal marina.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "entrantes-vegetariano-y-fresco-ensalada-mixta",
+              "name": "Ensalada Mixta",
+              "description": "Lechuga fresca, tomates maduros y cebolla delicada; ligera, crujiente y naturalmente refrescante.",
+              "price": "$3.20",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "entrantes-vegetariano-y-fresco-gazpacho-de-remolacha",
+              "name": "Gazpacho de Remolacha",
+              "description": "Crema fría de remolacha con tomate, pepino y un toque de limón; fresca, ligera y de sabor delicadamente dulce.",
+              "price": "$1.50",
+              "visible": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "entrantes-quesos-y-ensaladas",
+          "name": "Quesos & Ensaladas",
+          "showHeading": true,
+          "visible": true,
+          "order": 1,
+          "dishes": [
+            {
+              "id": "entrantes-quesos-y-ensaladas-tabla-de-queso-manchego-curado",
+              "name": "Tabla de Queso Manchego Curado",
+              "description": "Queso manchego maduro, de sabor profundo, notas de frutos secos y textura firme.",
+              "price": "$8.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "entrantes-quesos-y-ensaladas-ensalada-argentina-de-steak",
+              "name": "Ensalada Argentina de Steak",
+              "description": "Ensalada de carne argentina con queso azul y vinagreta Origen; intensa, fresca y refinada.",
+              "price": "$12.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "entrantes-quesos-y-ensaladas-ensalada-cesar-clasica",
+              "name": "Ensalada César Clásica",
+              "description": "Hojas frescas con salsa César sedosa, queso pecorino, bacon crujiente y croutons.",
+              "price": "$7.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "entrantes-quesos-y-ensaladas-ensalada-burrata-ahumada",
+              "name": "Ensalada Burrata Ahumada",
+              "description": "Burrata ligeramente ahumada con tomates frescos de temporada y aliño suave que realza su cremosidad.",
+              "price": "$10.00",
+              "visible": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "entrantes-pescados-y-mariscos",
+          "name": "Pescados & Mariscos",
+          "showHeading": true,
+          "visible": true,
+          "order": 2,
+          "dishes": [
+            {
+              "id": "entrantes-pescados-y-mariscos-gambas-al-ajillo",
+              "name": "Gambas al Ajillo",
+              "description": "Gambas jugosas cocinadas suavemente con ajo, aceite de oliva y chili.",
+              "price": "$9.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "entrantes-pescados-y-mariscos-ceviche-estilo-chef",
+              "name": "Ceviche Estilo Chef",
+              "description": "Pescado blanco fresco curado en lima con mango, ajo, jengibre y cebolla morada, servido con boniato frito crujiente y delicada leche de tigre de ají dulce.",
+              "price": "$7.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "entrantes-pescados-y-mariscos-ensaladilla-rusa-roja-origen",
+              "name": "Ensaladilla Rusa Roja Origen",
+              "description": "Ensaladilla rusa cremosa con pimientos del piquillo, atún y mayonesa; suave y equilibrada.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "entrantes-cerdo-y-ibericos",
+          "name": "Cerdo & Ibéricos",
+          "showHeading": true,
+          "visible": true,
+          "order": 3,
+          "dishes": [
+            {
+              "id": "entrantes-cerdo-y-ibericos-huevos-rotos-con-jamon-iberico",
+              "name": "Huevos Rotos con Jamón Ibérico",
+              "description": "Patatas y huevo con jamón; suave, sabroso e indulgente.",
+              "price": "$9.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "entrantes-cerdo-y-ibericos-chorizo-espanol-al-vino-tinto",
+              "name": "Chorizo Español al Vino Tinto",
+              "description": "Chorizo español cocinado lentamente en una salsa profunda y aromática de vino tinto.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "entrantes-carnes",
+          "name": "Carnes",
+          "showHeading": true,
+          "visible": true,
+          "order": 4,
+          "dishes": [
+            {
+              "id": "entrantes-carnes-empanadas-argentinas-de-carne",
+              "name": "Empanadas Argentinas de Carne",
+              "description": "Masa dorada rellena de carne argentina premium cocinada lentamente.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "entrantes-carnes-tapa-andaluza",
+              "name": "Tapa Andaluza",
+              "description": "Tierno filete de res sellado con setas y un intenso toque de pimentón ahumado.",
+              "price": "$8.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "entrantes-carnes-bao-estilo-origen",
+              "name": "BAO Estilo Origen",
+              "description": "Pan bao casero relleno de carne argentina premium y mayonesa picante.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "entrantes-carnes-albondigas-en-salsa-de-tomate-casera",
+              "name": "Albóndigas en Salsa de Tomate Casera",
+              "description": "Albóndigas artesanales en una salsa de tomate profunda y casera.",
+              "price": "$8.00",
+              "visible": true,
+              "order": 3
+            },
+            {
+              "id": "entrantes-carnes-carpaccio-premium-de-res-argentina",
+              "name": "Carpaccio Premium de Res Argentina",
+              "description": "Finas láminas de res argentina premium con rúcula, alcaparras, jugo de limón y aceite de oliva virgen extra.",
+              "price": "$15.00",
+              "visible": true,
+              "order": 4
+            },
+            {
+              "id": "entrantes-carnes-tabla-iberica-de-bellota",
+              "name": "Tabla Ibérica de Bellota",
+              "description": "Embutidos ibéricos premium de bellota, finamente cortados, ricos y de textura fundente.",
+              "price": "$16.00",
+              "visible": true,
+              "order": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "platos-principales",
+      "name": "Platos Principales",
+      "visible": true,
+      "order": 2,
+      "subcategories": [
+        {
+          "id": "platos-principales-cortes-a-la-piedra",
+          "name": "Cortes a la Piedra",
+          "showHeading": true,
+          "visible": true,
+          "order": 0,
+          "dishes": [
+            {
+              "id": "platos-principales-cortes-a-la-piedra-sirloin-steak-200g",
+              "name": "Sirloin Steak / 200g",
+              "description": "Sirloin premium, preparado con precisión y presentado sobre una piedra negra caliente.",
+              "price": "$28.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "platos-principales-cortes-a-la-piedra-ribeye-200g",
+              "name": "Ribeye / 200g",
+              "description": "Ribeye premium sellado y servido sobre piedra negra ardiente, liberando su marmoleo, riqueza y sabor profundo.",
+              "price": "$25.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "platos-principales-cortes-a-la-piedra-filete-de-res-200g",
+              "name": "Filete de Res / 200g",
+              "description": "Filete de res premium, sellado y terminado sobre piedra negra ardiente, con ternura excepcional y sabor intenso.",
+              "price": "$28.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "platos-principales-cortes-a-la-piedra-servicio-incluido",
+              "name": "Servicio incluido",
+              "description": "Todas las selecciones de carne se sirven con patatas fritas doradas, ensalada fresca y chimichurri argentino casero.",
+              "price": "",
+              "note": true,
+              "visible": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "platos-principales-principales-de-autor",
+          "name": "Principales de Autor",
+          "showHeading": true,
+          "visible": true,
+          "order": 1,
+          "dishes": [
+            {
+              "id": "platos-principales-principales-de-autor-curry-signature-origen",
+              "name": "Curry Signature Origen",
+              "description": "Pechuga de pollo asada con arroz jazmín y curry rojo artesanal elaborado con ajíes dulces cubanos y leche de coco.",
+              "price": "$17.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "platos-principales-principales-de-autor-sopa-de-curry-con-mariscos",
+              "name": "Sopa de Curry con Mariscos",
+              "description": "Cremosa sopa de mariscos en caldo de coco y curry aromático, con un sutil toque de hierbas frescas.",
+              "price": "$10.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "platos-principales-principales-de-autor-burger-signature-origen",
+              "name": "Burger Signature Origen",
+              "description": "Carne premium, queso fundido, bacon, cebolla crujiente y nuestra famosa mayonesa secreta.",
+              "price": "$16.00",
+              "visible": true,
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "platos-principales-pescados-y-mariscos",
+          "name": "Pescados & Mariscos",
+          "showHeading": true,
+          "visible": true,
+          "order": 2,
+          "dishes": [
+            {
+              "id": "platos-principales-pescados-y-mariscos-pescado-blanco-sedoso",
+              "name": "Pescado Blanco Sedoso",
+              "description": "Pescado blanco fresco sobre salsa de leche de coco, con patatas españolas doradas en un jugo delicado. Servido con arroz jazmín.",
+              "price": "$15.00",
+              "visible": true,
+              "order": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "postres",
+      "name": "Postres",
+      "visible": true,
+      "order": 3,
+      "subcategories": [
+        {
+          "id": "postres-postres",
+          "name": "Postres",
+          "showHeading": false,
+          "visible": true,
+          "order": 0,
+          "dishes": [
+            {
+              "id": "postres-postres-cheesecake-de-dulce-de-leche-estilo-argentino",
+              "name": "Cheesecake de Dulce de Leche Estilo Argentino",
+              "description": "Cheesecake argentino refinado, de textura aterciopelada, terminado con dulce de leche premium.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "postres-postres-tiramisu-deconstruido",
+              "name": "Tiramisú Deconstruido",
+              "description": "Tiramisú elegante deconstruido con crema suave de mascarpone, bizcocho impregnado de espresso, cacao fino y notas de chocolate, reinterpretando el clásico italiano de forma moderna y refinada.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "postres-postres-coulant-de-chocolate",
+              "name": "Coulant de Chocolate",
+              "description": "Bizcocho de chocolate de corazón fundente, servido tibio para una experiencia intensa y cremosa.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "postres-postres-postre-del-dia",
+              "name": "Postre del Día",
+              "description": "Consulte con nuestro equipo la selección fresca preparada para hoy.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cafe-digestivos",
+      "name": "Café & Digestivos",
+      "visible": true,
+      "order": 4,
+      "subcategories": [
+        {
+          "id": "cafe-digestivos-cafes-clasicos",
+          "name": "Cafés Clásicos",
+          "showHeading": true,
+          "visible": true,
+          "order": 0,
+          "dishes": [
+            {
+              "id": "cafe-digestivos-cafes-clasicos-espresso",
+              "name": "Espresso",
+              "description": "Corto, intenso y aromático.",
+              "price": "$2.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "cafe-digestivos-cafes-clasicos-cortado",
+              "name": "Cortado",
+              "description": "Espresso con un toque de leche.",
+              "price": "$2.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "cafe-digestivos-cafes-clasicos-cafe-americano",
+              "name": "Café Americano",
+              "description": "Largo, suave y equilibrado.",
+              "price": "$2.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "cafe-digestivos-cafes-clasicos-cafe-con-leche",
+              "name": "Café con Leche",
+              "description": "Café y leche caliente en proporción clásica.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 3
+            },
+            {
+              "id": "cafe-digestivos-cafes-clasicos-cafe-bombon",
+              "name": "Café Bombón",
+              "description": "Espresso con leche condensada, dulce y cremoso.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 4
+            },
+            {
+              "id": "cafe-digestivos-cafes-clasicos-mocha",
+              "name": "Mocha",
+              "description": "Café, leche y cacao con textura sedosa.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 5
+            },
+            {
+              "id": "cafe-digestivos-cafes-clasicos-cappuccino",
+              "name": "Cappuccino",
+              "description": "Espresso, leche vaporizada y espuma cremosa.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 6
+            }
+          ]
+        },
+        {
+          "id": "cafe-digestivos-cafes-con-licor",
+          "name": "Cafés con Licor",
+          "showHeading": true,
+          "visible": true,
+          "order": 1,
+          "dishes": [
+            {
+              "id": "cafe-digestivos-cafes-con-licor-carajillo",
+              "name": "Carajillo",
+              "description": "Espresso con licor intenso, cálido y digestivo.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "cafe-digestivos-cafes-con-licor-cafe-irlandes",
+              "name": "Café Irlandés",
+              "description": "Café, whisky, azúcar y crema suave.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "cafe-digestivos-cafes-con-licor-cafe-calypso",
+              "name": "Café Calypso",
+              "description": "Café con ron y caramelo.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "cafe-digestivos-cafes-con-licor-cafe-royal",
+              "name": "Café Royal",
+              "description": "Café con brandy o coñac; elegante y profundo.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 3
+            },
+            {
+              "id": "cafe-digestivos-cafes-con-licor-cafe-baileys",
+              "name": "Café Baileys",
+              "description": "Café con crema irlandesa; suave y goloso.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 4
+            }
+          ]
+        },
+        {
+          "id": "cafe-digestivos-licores-y-digestivos",
+          "name": "Licores & Digestivos",
+          "showHeading": true,
+          "visible": true,
+          "order": 2,
+          "dishes": [
+            {
+              "id": "cafe-digestivos-licores-y-digestivos-frangelico",
+              "name": "Frangelico",
+              "description": "Licor de avellanas dulce, aromático y perfecto para la sobremesa.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "cafe-digestivos-licores-y-digestivos-licor-pazo-pondal-cafe",
+              "name": "Licor Pazo Pondal Café",
+              "description": "Licor de café aromático, dulce y de final intenso.",
+              "price": "$5.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "cafe-digestivos-licores-y-digestivos-licor-baileys",
+              "name": "Licor Baileys",
+              "description": "Crema irlandesa dulce y cremosa para disfrutar después de la comida.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 2
+            },
+            {
+              "id": "cafe-digestivos-licores-y-digestivos-crema-ruavieja-original",
+              "name": "Crema Ruavieja Original",
+              "description": "Crema de licor suave, dulce y aterciopelada.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 3
+            },
+            {
+              "id": "cafe-digestivos-licores-y-digestivos-brandy-torres-15",
+              "name": "Brandy Torres 15",
+              "description": "Brandy añejo de perfil cálido, profundo y elegante.",
+              "price": "$4.00",
+              "visible": true,
+              "order": 4
+            },
+            {
+              "id": "cafe-digestivos-licores-y-digestivos-amaretto",
+              "name": "Amaretto",
+              "description": "Licor dulce de almendras y especias, ideal para la sobremesa.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 5
+            },
+            {
+              "id": "cafe-digestivos-licores-y-digestivos-licor-anis-del-mono",
+              "name": "Licor Anís del Mono",
+              "description": "Digestivo anisado, aromático y suave.",
+              "price": "$3.00",
+              "visible": true,
+              "order": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
