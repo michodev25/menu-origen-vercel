@@ -19,7 +19,7 @@
             {
               "id": "cocteleria-cocteleria-de-autor-el-bodegon",
               "name": "El Bodegón",
-              "description": "Trago de autor fresco y frutal, elaborado con vino tinto, fresas y un balance amable de dulzor.",
+              "description": "Caramelo sin azucar, jugo de piña con sirope de manzana, leche y esencia coco.",
               "price": "$5.00",
               "visible": true,
               "order": 0
@@ -59,7 +59,7 @@
             {
               "id": "cocteleria-cocteleria-de-autor-black-widow",
               "name": "Black Widow",
-              "description": "Tequila, mora, albahaca y lima en un trago intenso, fresco y herbal.",
+              "description": "Vodka, mora, albahaca y lima en un trago intenso, fresco y herbal.",
               "price": "$4.00",
               "visible": true,
               "order": 5
