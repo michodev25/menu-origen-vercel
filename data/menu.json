@@ -581,10 +581,43 @@
       ]
     },
     {
+      "id": "sugerencias-del-chef",
+      "name": "Sugerencias del Chef",
+      "visible": true,
+      "order": 2,
+      "subcategories": [
+        {
+          "id": "sugerencias-del-chef-especialidades",
+          "name": "Sugerencias del Chef",
+          "showHeading": false,
+          "visible": true,
+          "order": 0,
+          "dishes": [
+            {
+              "id": "sugerencias-del-chef-risotto-de-funghi-con-solomillo",
+              "name": "Risotto de Funghi con Solomillo",
+              "description": "Cremoso risotto de hongos silvestres, acompañado de tiernos medallones de solomillo, terminado con parmesano y un toque de hierbas frescas.",
+              "price": "$15.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "sugerencias-del-chef-pasta-de-salmon-al-vodka",
+              "name": "Pasta de salmón al vodka",
+              "description": "Pasta en cremosa salsa de vodka, salmón fresco y un toque de hierbas, con un equilibrio perfecto entre suavidad y sabor.",
+              "price": "$10.00",
+              "visible": true,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "platos-principales",
       "name": "Platos Principales",
       "visible": true,
-      "order": 2,
+      "order": 3,
       "subcategories": [
         {
           "id": "platos-principales-cortes-a-la-piedra",
@@ -684,7 +717,7 @@
       "id": "postres",
       "name": "Postres",
       "visible": true,
-      "order": 3,
+      "order": 4,
       "subcategories": [
         {
           "id": "postres-postres",
@@ -733,7 +766,7 @@
       "id": "cafe-digestivos",
       "name": "Café & Digestivos",
       "visible": true,
-      "order": 4,
+      "order": 5,
       "subcategories": [
         {
           "id": "cafe-digestivos-cafes-clasicos",
