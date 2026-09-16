@@ -13,6 +13,11 @@ import type {
 const dataDirectory = path.join(process.cwd(), "data");
 const menuPath = path.join(dataDirectory, "menu.json");
 const backupPath = path.join(dataDirectory, "menu.backup.json");
+const hiddenPublicStarterIds = new Set([
+  "entrantes-carnes-tapa-andaluza",
+  "entrantes-carnes-bao-estilo-origen",
+  "entrantes-carnes-albondigas-en-salsa-de-tomate-casera",
+]);
 let writeQueue: Promise<void> = Promise.resolve();
 
 function byOrder<T extends { order: number }>(a: T, b: T) {
@@ -199,7 +204,11 @@ export function toPublicMenu(menu: MenuData): PublicMenuSection[] {
         .sort(byOrder)
         .flatMap((subcategory) =>
           [...subcategory.dishes]
-            .filter((dish) => dish.visible)
+            .filter(
+              (dish) =>
+                dish.visible &&
+                !(category.id === "entrantes" && hiddenPublicStarterIds.has(dish.id)),
+            )
             .sort(byOrder)
             .map((dish) => ({
               id: dish.id,
