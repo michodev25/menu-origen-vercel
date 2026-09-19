@@ -367,7 +367,7 @@
               "id": "cocteleria-liquidos-origen-jugo-natural",
               "name": "Jugo Natural",
               "description": "Jugo fresco preparado con fruta natural.",
-              "price": "$2.00",
+              "price": "$1.50",
               "visible": true,
               "order": 5
             }
@@ -408,7 +408,7 @@
               "id": "entrantes-vegetariano-y-fresco-ensalada-mixta",
               "name": "Ensalada Mixta",
               "description": "Lechuga fresca, tomates maduros y cebolla delicada; ligera, crujiente y naturalmente refrescante.",
-              "price": "$3.20",
+              "price": "$3.00",
               "visible": true,
               "order": 2
             },
@@ -630,7 +630,7 @@
               "id": "platos-principales-cortes-a-la-piedra-sirloin-steak-200g",
               "name": "Sirloin Steak / 200g",
               "description": "Sirloin premium, preparado con precisión y presentado sobre una piedra negra caliente.",
-              "price": "$28.00",
+              "price": "$25.00",
               "visible": true,
               "order": 0
             },
@@ -705,7 +705,7 @@
               "id": "platos-principales-pescados-y-mariscos-pescado-blanco-sedoso",
               "name": "Pescado Blanco Sedoso",
               "description": "Pescado blanco fresco sobre salsa de leche de coco, con patatas españolas doradas en un jugo delicado. Servido con arroz jazmín.",
-              "price": "$15.00",
+              "price": "$12.00",
               "visible": true,
               "order": 0
             }
@@ -868,7 +868,7 @@
               "id": "cafe-digestivos-cafes-con-licor-cafe-royal",
               "name": "Café Royal",
               "description": "Café con brandy o coñac; elegante y profundo.",
-              "price": "$5.00",
+              "price": "$7.00",
               "visible": true,
               "order": 3
             },
@@ -876,7 +876,7 @@
               "id": "cafe-digestivos-cafes-con-licor-cafe-baileys",
               "name": "Café Baileys",
               "description": "Café con crema irlandesa; suave y goloso.",
-              "price": "$6.00",
+              "price": "$7.00",
               "visible": true,
               "order": 4
             }
