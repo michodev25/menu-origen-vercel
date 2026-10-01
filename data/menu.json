@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-12T18:43:43.437Z",
-  "updatedBy": "admin",
+  "updatedAt": "2026-10-01T00:29:56.720Z",
+  "updatedBy": "codex",
   "categories": [
     {
       "id": "cocteleria",
@@ -19,7 +19,7 @@
             {
               "id": "cocteleria-cocteleria-de-autor-el-bodegon",
               "name": "El Bodegón",
-              "description": "Caramelo sin azucar, jugo de piña con sirope de manzana, leche y esencia coco.",
+              "description": "Caramelo sin azúcar, jugo de piña con sirope de manzana, leche y esencia de coco.",
               "price": "$5.00",
               "visible": true,
               "order": 0
@@ -148,7 +148,7 @@
             },
             {
               "id": "cocteleria-cocteleria-origen-long-island-ice-tea",
-              "name": "Long Island Ice Tea",
+              "name": "Long Island Iced Tea",
               "description": "Mezcla intensa de destilados, cítricos y cola en un trago largo.",
               "price": "$6.00",
               "visible": true,
@@ -300,7 +300,7 @@
             },
             {
               "id": "cocteleria-cocteleria-origen-expresso-martini",
-              "name": "Expresso Martini",
+              "name": "Espresso Martini",
               "description": "Vodka, café espresso y licor de café en un cóctel intenso y sedoso.",
               "price": "$8.00",
               "visible": true,
@@ -460,6 +460,14 @@
               "price": "$10.00",
               "visible": true,
               "order": 3
+            },
+            {
+              "id": "entrantes-quesos-y-ensaladas-azul-y-berenjera",
+              "name": "Azul y Berenjera",
+              "description": "Berenjena asada con queso azul fundente, cebolla caramelizada y un crujiente de nueces; una combinación suave, intensa y ligeramente dulce.",
+              "price": "$6.00",
+              "visible": true,
+              "order": 4
             }
           ]
         },
@@ -491,7 +499,7 @@
               "name": "Ensaladilla Rusa Roja Origen",
               "description": "Ensaladilla rusa cremosa con pimientos del piquillo, atún y mayonesa; suave y equilibrada.",
               "price": "$5.00",
-              "visible": true,
+              "visible": false,
               "order": 2
             }
           ]
@@ -508,8 +516,16 @@
               "name": "Huevos Rotos con Jamón Ibérico",
               "description": "Patatas y huevo con jamón; suave, sabroso e indulgente.",
               "price": "$9.00",
-              "visible": true,
+              "visible": false,
               "order": 0
+            },
+            {
+              "id": "entrantes-cerdo-y-ibericos-potito-iberico",
+              "name": "Potito Ibérico",
+              "description": "Cremoso puré de patata con jamón ibérico, huevo suave y un toque de aceite de oliva, servido en un pequeño potito lleno de sabor.",
+              "price": "$9.00",
+              "visible": true,
+              "order": 1
             },
             {
               "id": "entrantes-cerdo-y-ibericos-chorizo-espanol-al-vino-tinto",
@@ -517,7 +533,7 @@
               "description": "Chorizo español cocinado lentamente en una salsa profunda y aromática de vino tinto.",
               "price": "$6.00",
               "visible": true,
-              "order": 1
+              "order": 2
             }
           ]
         },
@@ -628,7 +644,7 @@
           "dishes": [
             {
               "id": "platos-principales-cortes-a-la-piedra-sirloin-steak-200g",
-              "name": "Sirloin Steak / 200g",
+              "name": "Sirloin Steak / 200 g",
               "description": "Sirloin premium, preparado con precisión y presentado sobre una piedra negra caliente.",
               "price": "$25.00",
               "visible": true,
@@ -636,7 +652,7 @@
             },
             {
               "id": "platos-principales-cortes-a-la-piedra-ribeye-200g",
-              "name": "Ribeye / 200g",
+              "name": "Ribeye / 200 g",
               "description": "Ribeye premium sellado y servido sobre piedra negra ardiente, liberando su marmoleo, riqueza y sabor profundo.",
               "price": "$25.00",
               "visible": true,
@@ -644,7 +660,7 @@
             },
             {
               "id": "platos-principales-cortes-a-la-piedra-filete-de-res-200g",
-              "name": "Filete de Res / 200g",
+              "name": "Filete de Res / 200 g",
               "description": "Filete de res premium, sellado y terminado sobre piedra negra ardiente, con ternura excepcional y sabor intenso.",
               "price": "$28.00",
               "visible": true,
@@ -706,6 +722,56 @@
               "name": "Pescado Blanco Sedoso",
               "description": "Pescado blanco fresco sobre salsa de leche de coco, con patatas españolas doradas en un jugo delicado. Servido con arroz jazmín.",
               "price": "$12.00",
+              "visible": true,
+              "order": 0
+            }
+          ]
+        },
+        {
+          "id": "platos-principales-especiales-de-la-casa",
+          "name": "Especiales de la Casa",
+          "showHeading": true,
+          "visible": true,
+          "order": 3,
+          "dishes": [
+            {
+              "id": "platos-principales-especiales-de-la-casa-el-consentido-origen",
+              "name": "El Consentido Origen",
+              "description": "Tierna carne de res sobre un puré cremoso, acompañada de verduras salteadas y una salsa de la casa de sabor profundo.",
+              "price": "$15.00",
+              "visible": true,
+              "order": 0
+            },
+            {
+              "id": "platos-principales-especiales-de-la-casa-mier-mal-y-candela",
+              "name": "Mier Mal y Candela",
+              "description": "Mariscos salteados al fuego con ajo, ají y un toque cítrico, servidos con arroz aromático y una salsa de carácter picante.",
+              "price": "$14.00",
+              "visible": true,
+              "order": 1
+            },
+            {
+              "id": "platos-principales-especiales-de-la-casa-octavo-pescado",
+              "name": "Octavo Pescado",
+              "description": "Filete de pescado dorado con mantequilla de limón y hierbas frescas, acompañado de vegetales de temporada y patatas suaves.",
+              "price": "$14.00",
+              "visible": true,
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "platos-principales-pastas",
+          "name": "Pastas",
+          "showHeading": true,
+          "visible": true,
+          "order": 4,
+          "dishes": [
+            {
+              "id": "platos-principales-pastas-gnochi-4-quesos",
+              "name": "Gnocchi 4 Quesos",
+              "description": "Suaves ñoquis de patata bañados en una cremosa salsa de cuatro quesos, terminados con parmesano y un delicado toque de pimienta negra.",
+              "price": "$10.00",
               "visible": true,
               "order": 0
             }
