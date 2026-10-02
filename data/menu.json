@@ -85,7 +85,7 @@
               "id": "cocteleria-bebidas-alcoholicas-cerveza-heineken",
               "name": "Cerveza Heineken",
               "description": "Lager de perfil limpio, equilibrado y refrescante.",
-              "price": "$2.50",
+              "price": "$4.00",
               "visible": true,
               "order": 1
             },
