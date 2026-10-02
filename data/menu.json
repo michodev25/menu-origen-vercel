@@ -737,15 +737,15 @@
             {
               "id": "platos-principales-especiales-de-la-casa-el-consentido-origen",
               "name": "El Consentido Origen",
-              "description": "Tierna carne de res sobre un puré cremoso, acompañada de verduras salteadas y una salsa de la casa de sabor profundo.",
+              "description": "...",
               "price": "$15.00",
               "visible": true,
               "order": 0
             },
             {
               "id": "platos-principales-especiales-de-la-casa-mier-mal-y-candela",
-              "name": "Mier Mal y Candela",
-              "description": "Mariscos salteados al fuego con ajo, ají y un toque cítrico, servidos con arroz aromático y una salsa de carácter picante.",
+              "name": "Miel Mar y Candela",
+              "description": "...",
               "price": "$14.00",
               "visible": true,
               "order": 1
@@ -753,7 +753,7 @@
             {
               "id": "platos-principales-especiales-de-la-casa-octavo-pescado",
               "name": "Octavo Pecado",
-              "description": "Filete de pescado dorado con mantequilla de limón y hierbas frescas, acompañado de vegetales de temporada y patatas suaves.",
+              "description": "...",
               "price": "$14.00",
               "visible": true,
               "order": 2
